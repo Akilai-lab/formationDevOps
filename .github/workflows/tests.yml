@@ -1,8 +1,8 @@
 #Doc : https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
-name: main workflow
+name: tests workflow
 on: push
 jobs:
-  lint:
+  jest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,4 +10,4 @@ jobs:
         with:
           node-version: '16'
       - run: npm ci
-      - run: npm run lint
+      - run: npm run test
